@@ -11,11 +11,12 @@
 </template>
 
 <script>
+// TODO 课后作业 删除购物车中的美食
 export default {
   mounted() {},
   computed: {
     selectedFoods() {
-      return this.$store.state.foods;
+      return this.$store.state.cart;
     },
   },
   methods: {
