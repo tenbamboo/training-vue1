@@ -10,7 +10,10 @@ export default new Vuex.Store({
   },
   mutations: {
     ADD_CART_FOOD(state, food) {
-      state.cart.push(food);
+      const findObj = state.cart.find((item) => item.id === food.id);
+      if (!findObj) {
+        state.cart.push(food);
+      }
     },
     ADD_FOOD(state, food) {
       state.foods.push(food);
@@ -29,22 +32,32 @@ export default new Vuex.Store({
           {
             id: '1',
             label: '🍚',
+            price: 1000,
           },
           {
             id: '2',
             label: '🍝',
+            price: 2000,
           },
           {
             id: '3',
             label: '🍲',
+            price: 3000,
           },
           {
             id: '4',
             label: '🍔',
+            price: 5000,
           },
           {
             id: '5',
             label: '🍖',
+            price: 8000,
+          },
+          {
+            id: '6',
+            label: '🧀',
+            price: 10000,
           },
         ]);
       });
