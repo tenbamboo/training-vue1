@@ -16,34 +16,40 @@
 export default {
   data() {
     return {
-      foodList: [
-        {
-          id: '1',
-          label: '🍚',
-          price: 1000,
-        },
-        {
-          id: '2',
-          label: '🍝',
-          price: 2000,
-        },
-        {
-          id: '3',
-          label: '🍲',
-          price: 3000,
-        },
-        {
-          id: '4',
-          label: '🍔',
-          price: 5000,
-        },
-        {
-          id: '5',
-          label: '🍖',
-          price: 8000,
-        },
-      ],
+      // foodList: [
+      //   {
+      //     id: '1',
+      //     label: '🍚',
+      //     price: 1000,
+      //   },
+      //   {
+      //     id: '2',
+      //     label: '🍝',
+      //     price: 2000,
+      //   },
+      //   {
+      //     id: '3',
+      //     label: '🍲',
+      //     price: 3000,
+      //   },
+      //   {
+      //     id: '4',
+      //     label: '🍔',
+      //     price: 5000,
+      //   },
+      //   {
+      //     id: '5',
+      //     label: '🍖',
+      //     price: 8000,
+      //   },
+      // ],
     };
+  },
+  props: {
+    foodList: {
+      type: Array,
+      default: () => [],
+    },
   },
   filters: {
     priceFilter(price) {
@@ -56,7 +62,7 @@ export default {
   mounted() {},
   methods: {
     pickFood(item) {
-      this.$emit('pick', item);
+      this.$emit('pick', item, 'abc', 'test');
     },
   },
 };
